@@ -10,6 +10,18 @@ class MockDateTimePluginPlatform
 
   @override
   Future<String?> getPlatformVersion() => Future.value('42');
+
+  @override
+  Future<String?> stringFromDateTime(String formatter, DateTime dateTime) {
+    // TODO: implement stringFromDateTime
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> stringFromNow(String formatter) {
+    // TODO: implement stringFromNow
+    throw UnimplementedError();
+  }
 }
 
 void main() {
@@ -24,6 +36,6 @@ void main() {
     MockDateTimePluginPlatform fakePlatform = MockDateTimePluginPlatform();
     DateTimePluginPlatform.instance = fakePlatform;
 
-    expect(await dateTimePlugin.getPlatformVersion(), '42');
+    expect(await dateTimePlugin.stringFromNow("yyyy年MM月"), '42');
   });
 }
